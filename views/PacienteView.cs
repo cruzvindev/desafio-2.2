@@ -24,7 +24,7 @@ public class PacienteView
         this._consultaController = consultaController;
     }
 
-    public void MenuPrincipal()
+    public void MenuPrincipalView()
     {
         Console.WriteLine();
         Console.WriteLine("Menu Principal");
@@ -37,7 +37,7 @@ public class PacienteView
         while (!int.TryParse(valorDigitado, out valorConvertido))
         {
             Console.WriteLine("Não foi possível compreender o valor digitado, tente novamente: \n");
-            MenuPrincipal();
+            MenuPrincipalView();
         }
 
         switch (valorConvertido)
@@ -47,6 +47,8 @@ public class PacienteView
                 break;
             case 2:
                 MenuAgenda();
+                break;
+            case 3:
                 break;
         }
     }
@@ -66,7 +68,7 @@ public class PacienteView
         while (!int.TryParse(valorDigitado, out valorConvertido))
         {
             Console.WriteLine("Não foi possível compreender o valor digitado, tente novamente: \n");
-            MenuPrincipal();
+            MenuPrincipalView();
         }
 
         switch (valorConvertido)
@@ -84,7 +86,7 @@ public class PacienteView
                 ListarPacientes(2);
                 break;
             case 5:
-                MenuPrincipal();
+                MenuPrincipalView();
                 break;
         }
     }
@@ -190,6 +192,7 @@ public class PacienteView
                         string horarioFinal = consulta.HoraFinal.ToString(@"hh\:mm");
                         Console.WriteLine($"{padding}Agendado para: {consulta.DataConsulta:dd/MM/yyyy}");
                         Console.WriteLine($"{padding}{horarioInicial} às {horarioFinal}");
+                        Console.WriteLine();
                     }
                 }
             }
@@ -215,7 +218,7 @@ public class PacienteView
         while (!int.TryParse(valorDigitado, out valorConvertido))
         {
             Console.WriteLine("Não foi possível compreender o valor digitado, tente novamente: \n");
-            MenuPrincipal();
+            MenuPrincipalView();
         }
 
         switch (valorConvertido)
@@ -226,12 +229,14 @@ public class PacienteView
                 break;
             case 2:
                 this._consultaView.CancelarAgendamentoView();
+                MenuAgenda();
                 break;
             case 3:
-                this._consultaView.ListarAgenda();
+                this._consultaView.ListarAgendaView();
+                MenuAgenda();
                 break;
             case 4:
-                MenuPrincipal();
+                MenuPrincipalView();
                 break;
         }
     }

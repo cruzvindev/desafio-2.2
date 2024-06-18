@@ -24,7 +24,7 @@ public class ConsultaService
     {
         var todasConsultas = this._consultaRepository.TodasConsultas();
 
-        if (todasConsultas.Contains(consulta))
+        if (!VerificaHorarios(consulta, todasConsultas))
         {
             return 0;
         }

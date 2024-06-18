@@ -11,7 +11,6 @@ public class Paciente : IComparable<Paciente>
     public string Nome { get; set; }
     public string CPF { get; set; }
     public DateTime DataNascimento { get; set; }
-    //public List<Consulta> Consultas { get; set; } = new List<Consulta>();
 
     public Paciente(string Nome, string CPF, DateTime DataNascimento)
     {

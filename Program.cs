@@ -12,5 +12,5 @@ ConsultaController consultaController = new ConsultaController(consultaService);
 ConsultaView consultaView = new ConsultaView(consultaController, pacienteController);
 PacienteView pacienteView = new PacienteView(pacienteController, consultaView, consultaController);
 
-pacienteView.MenuPrincipal();
+pacienteView.MenuPrincipalView();
 

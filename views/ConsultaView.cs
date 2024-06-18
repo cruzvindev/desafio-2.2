@@ -193,7 +193,7 @@ public class ConsultaView
         Console.WriteLine("Agendamento cancelado com sucesso !");
     }
 
-    public void ListarAgenda()
+    public void ListarAgendaView()
     {
         Console.WriteLine();
         Console.Write("Apresentar a agenda T-Toda ou P-Período: ");
